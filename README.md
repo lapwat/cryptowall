@@ -1,5 +1,5 @@
 # Cryptowall
-Cryptowall is a crypto wallet generator. This tool is an **offline** Docker container which generates random crypto wallets.
+Cryptowall is an offline Docker container which generates random crypto wallets. It prints out the private key (or seed) and the corresponding public address to send funds to.
 
 ## Usage
 
