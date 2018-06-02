@@ -1,10 +1,10 @@
 # Cryptowall
-Cryptowall is an offline Docker container which generates random crypto wallets. It prints out the private key (or seed) and the corresponding public address to send funds to.
+Cryptowall is an **offline** Docker container which generates random crypto wallets. It prints out the private key (or seed) and the corresponding public address to send funds to.
 
 ## Usage
 
 ```sh
-$ docker run --network=none lapwat/cryptowall iota eth
+$ docker run --network=none lapwat/cryptowall eth iota
 ```
 
 ## Methods used
