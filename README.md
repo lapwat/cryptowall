@@ -11,11 +11,11 @@ $ docker run --network=none lapwat/cryptowall iota eth
 
 ### Ethereum / ERC20
 
-I used the method and script described in [this excellent article](https://kobl.one/blog/create-full-ethereum-keypair-and-address).
+I used the method and script described in [this excellent article](https://kobl.one/blog/create-full-ethereum-keypair-and-address) from Vincent Kobel.
 
 ### Iota
 
-I used the official python library [pyota](https://github.com/iotaledger/iota.lib.py).
+I used the class _AddressGenerator_ from the official python library [pyota](https://github.com/iotaledger/iota.lib.py).
 
 ### Ask for token support
 
