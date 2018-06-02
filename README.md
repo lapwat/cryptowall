@@ -4,6 +4,12 @@ Cryptowall is an **offline** Docker container which generates random crypto wall
 ## Usage
 
 ```sh
+$ docker run --network=none lapwat/cryptowall [-p "passphrase"] token...
+```
+
+## Example
+
+```sh
 $ docker run --network=none lapwat/cryptowall eth iota
 ----- Generating ETH wallet
 Private key: 073026f2007252ec0c757e2b267f0b520c4c43032c99a87e85682142a7a779f5
