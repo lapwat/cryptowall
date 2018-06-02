@@ -14,11 +14,11 @@ fi
 for TOKEN in "$@"
 do
     TOKEN=${TOKEN^^}
+    echo "----- Generating $TOKEN wallet"
     case $TOKEN in
-        ETH)
-            echo "----- Generating $TOKEN wallet"
-            ./ether.sh
-            echo "----- Done";;
+        ETH) ./eth/main.sh;;
+        IOTA) python ./iota/main.py;;
         *) echo "$TOKEN not yet implemented. You can ask for its support by creating an issue at https://github.com/lapwat/crypto-wallet-generator/issues.";
     esac
+    echo "----- Done"
 done
