@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-  echo -e "\nUsage: docker run --network=none lapwat/crypto-wallet-generator token... [--passphrase \"PASSPHRASE\"] \n" 1>&2
+  echo -e "\nUsage: docker run --network=none lapwat/crypto-wallet-generator token...\n" 1>&2
   exit 1
 }
 
@@ -18,7 +18,7 @@ do
     case $TOKEN in
         ETH) ./eth/main.sh;;
         IOTA) python ./iota/main.py;;
-        *) echo "$TOKEN not yet implemented. You can ask for its support by creating an issue at https://github.com/lapwat/crypto-wallet-generator/issues.";
+        *) echo "$TOKEN not yet implemented. You can ask for support of $TOKEN by opening an issue at https://github.com/lapwat/cryptowall/issues.";
     esac
     echo "----- Done"
 done
