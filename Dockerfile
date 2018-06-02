@@ -1,7 +1,5 @@
 FROM python:alpine
-
 RUN apk add --update alpine-sdk bash libffi-dev openssl-dev
-
 WORKDIR /build
 
 # ETH
@@ -20,7 +18,6 @@ USER app
 WORKDIR /home/app
 
 RUN cp /build/sha3sum/keccak-256sum .
-
 COPY . .
 
 ENTRYPOINT ["/home/app/entrypoint.sh"]
