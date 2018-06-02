@@ -1,2 +1,2 @@
 # crypto-wallet-generator
-Offline Docker container. It generates random or deterministic crypto wallets
+Offline Docker container which generates random and deterministic crypto wallets.
