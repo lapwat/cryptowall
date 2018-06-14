@@ -1,5 +1,7 @@
 # Cryptowall
-Cryptowall is an **offline** Docker container which generates random crypto wallets. It prints out the private key (or seed) and the corresponding public address to send funds to.
+Cryptowall is an **offline** Docker container which generates random crypto wallets. It prints out the private key, public key, seed or any other usefull info to recover your wallet. It also gives the corresponding address to share in order to receive funds.
+
+Scripts can be found in the folder named after the token. Methods used are described below & sources are given. I tried to use bash scripts where I could to be the most transparent.
 
 ## Usage
 
@@ -24,9 +26,11 @@ First address: OSVPRVP9FGXNMLNQGWWKBSBZ9LYLYEUIHLNJYGTRJDSCXRIJBDZOAZMOXWUAWCEZY
 
 ## Methods used
 
-### Ethereum / ERC20
+### Bitcoin / Ethereum
 
-I used the method and script described in [this excellent article](https://kobl.one/blog/create-full-ethereum-keypair-and-address) from Vincent Kobel.
+I used the method and script described in [this excellent article](https://kobl.one/blog/create-full-ethereum-keypair-and-address) from Vincent Kobel. He explaines how to generate an ECDSA keypair with OpenSSL.
+
+[This stackoverflow answer](https://stackoverflow.com/questions/48101258/how-to-convert-an-ecdsa-key-to-pem-format/49213805#49213805) inspired me to generate a deterministic key pair.
 
 ### Iota
 

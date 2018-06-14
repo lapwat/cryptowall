@@ -11,6 +11,7 @@ if [[ $# -eq 0 ]]; then
   usage
 fi
 
+# retrieve passphrase if given
 while getopts "p:" OPT
 do
   case "$OPT" in
@@ -25,13 +26,16 @@ do
   esac
 done
 
+# loop over token
 for TOKEN in "$@"
 do
     TOKEN=${TOKEN^^}
     echo "----- Generating $TOKEN wallet"
     case $TOKEN in
-        ETH) ./eth/main.sh;;
-        IOTA) python ./iota/main.py $PASSPHRASE;;
+        BTC) ./BTC.sh $PASSPHRASE;;
+        ETH) ./ETH.sh $PASSPHRASE;;
+        XMR) ./XMR.sh $PASSPHRASE;;
+        IOTA) python ./IOTA.py $PASSPHRASE;;
         *) echo "$TOKEN not yet implemented. You can ask for support of $TOKEN by opening an issue at https://github.com/lapwat/cryptowall/issues.";
     esac
     echo "----- Done"

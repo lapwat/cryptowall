@@ -4,10 +4,10 @@ from iota.crypto.types import Seed
 from iota.crypto.addresses import AddressGenerator
 
 if len(sys.argv) > 1:
-    # if passphrase is specified, use it as seed
+    print('Using', sys.argv[1], 'as seed')
     seed = sys.argv[1]
 else:
-    # else generate a random seed
+    print('Generating random seed')
     r = random.SystemRandom()
     trytes = '9ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     seed = ''.join([r.choice(trytes) for _ in range(81)])
