@@ -2,7 +2,7 @@
 
 if [[ $# -eq 1 ]]; then
     echo "Using SHA256($1) as private key"
-    priv=$(echo "$1" | sha256sum | cut -d' ' -f1)
+    priv=$(echo "$1" | sha256sum | tr -d ' ')
 
     # see https://stackoverflow.com/questions/48101258/how-to-convert-an-ecdsa-key-to-pem-format/49213805#49213805
     binary="302e0201010420${priv}a00706052b8104000a"

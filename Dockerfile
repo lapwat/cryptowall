@@ -1,5 +1,5 @@
-FROM python:alpine
-RUN apk add --update alpine-sdk bash libffi-dev openssl-dev vim
+FROM alpine:edge
+RUN apk add --update alpine-sdk bash libffi-dev openssl-dev vim python3-dev
 WORKDIR /build
 
 # ETH
@@ -11,7 +11,7 @@ RUN git clone https://github.com/maandree/sha3sum.git && \
     make keccak-256sum
 
 # IOTA
-RUN pip install pyota base58
+RUN pip3 install pyota base58
 
 RUN addgroup -S app && adduser -S -G app app
 USER app

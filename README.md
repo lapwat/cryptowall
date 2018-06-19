@@ -28,9 +28,11 @@ First address: OSVPRVP9FGXNMLNQGWWKBSBZ9LYLYEUIHLNJYGTRJDSCXRIJBDZOAZMOXWUAWCEZY
 
 ### Bitcoin / Ethereum
 
-I used the method and script described in [this excellent article](https://kobl.one/blog/create-full-ethereum-keypair-and-address) from Vincent Kobel. He explaines how to generate an ECDSA keypair with OpenSSL.
+[This stackoverflow answer](https://stackoverflow.com/questions/48101258/how-to-convert-an-ecdsa-key-to-pem-format/49213805#49213805) inspired me to generate the public key associated to the private key (ECDSA). You have to import a binary stream _302e0201010420+private_key+a00706052b8104000a_ into openssl.
+ 
+I used the method and script described in [this excellent article](https://kobl.one/blog/create-full-ethereum-keypair-and-address) from Vincent Kobel. He explaines how to generate an ECDSA keypair with OpenSSL and how to derive the public key into the corresponding address.
 
-[This stackoverflow answer](https://stackoverflow.com/questions/48101258/how-to-convert-an-ecdsa-key-to-pem-format/49213805#49213805) inspired me to generate a deterministic key pair.
+I used [this method](https://en.bitcoin.it/wiki/Wallet_import_format) to convert the private key into Wallet Import Format. I used [this technique](https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses) to convert the public key into the corresponding bitcoin address.
 
 ### Iota
 

@@ -35,7 +35,7 @@ do
         BTC) ./BTC.sh $PASSPHRASE;;
         ETH) ./ETH.sh $PASSPHRASE;;
         XMR) ./XMR.sh $PASSPHRASE;;
-        IOTA) python ./IOTA.py $PASSPHRASE;;
+        IOTA) python3 ./IOTA.py $PASSPHRASE;;
         *) echo "$TOKEN not yet implemented. You can ask for support of $TOKEN by opening an issue at https://github.com/lapwat/cryptowall/issues.";
     esac
     echo "----- Done"
