@@ -23,8 +23,8 @@ fi
 
 # extract public key in hex format, removing newlines, leading '04' and semicolon
 pub=$(printf "%s\n" $keys | grep pub -A 5 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^04//')
-addr=0x$(echo $pub | ./keccak-256sum -x -l | tr -d ' -' | tail -c 41)
+addr=$(echo $pub | ./keccak-256sum -x -l | tr -d ' -' | tail -c 41)
 
 echo "Private key: $priv"
-echo "Public key:  $pub"
-echo "Address:     $addr"
+echo "Public key:  04$pub"
+echo "Address:     0x$addr"

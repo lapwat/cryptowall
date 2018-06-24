@@ -1,6 +1,12 @@
 FROM alpine:edge
-RUN apk add --update alpine-sdk bash libffi-dev openssl-dev vim python3-dev
+RUN apk add --update alpine-sdk linux-headers bash perl-dev libffi-dev openssl-dev python3-dev vim
 WORKDIR /build
+
+# Last build of OpenSSL for support of EDDSA curves
+RUN git clone https://github.com/openssl/openssl.git && \
+	cd openssl && \
+	./config no-async && \
+	make install
 
 # ETH
 RUN git clone https://github.com/maandree/libkeccak.git && \
