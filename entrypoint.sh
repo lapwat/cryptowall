@@ -1,36 +1,32 @@
 #!/bin/bash
 
-usage() {
-  echo -e "\nUsage: docker run --network=none lapwat/cryptowall token...\n" 1>&2
-  exit 1
-}
-
 # check that an argument was given
 if [[ $# -eq 0 ]]; then
-  echo "You must specify at least one token."
-  usage
+  printf "You must specify at least one token.\nUsage: docker run --network=none lapwat/cryptowall token...\n" 1>&2
+  exit 1
 fi
 
+printf "                               _                                _   _\n"
+printf "                              | |                              | | | |\n"
+printf "  ___   _ __   _   _   _ __   | |_    ___   __      __   __ _  | | | |\n"
+printf " / __| | '__| | | | | | '_ \  | __|  / _ \  \ \ /\ / /  / _\` | | | | |\n"
+printf "| (__  | |    | |_| | | |_) | | |_  | (_) |  \ V  V /  | (_| | | | | |\n"
+printf " \___| |_|     \__, | | .__/   \__|  \___/    \_/\_/    \__,_| |_| |_|\n"
+printf "                __/ | | |                                             \n"
+printf "               |___/  |_|                                             \n"
+printf "                                           KEEP'EM SAFE!              \n"
+
 # loop over token list
-echo "                               _                                _   _"
-echo "                              | |                              | | | |"
-echo "  ___   _ __   _   _   _ __   | |_    ___   __      __   __ _  | | | |"
-echo " / __| | '__| | | | | | '_ \  | __|  / _ \  \ \ /\ / /  / _\` | | | | |"
-echo "| (__  | |    | |_| | | |_) | | |_  | (_) |  \ V  V /  | (_| | | | | |"
-echo " \___| |_|     \__, | | .__/   \__|  \___/    \_/\_/    \__,_| |_| |_|"
-echo "                __/ | | |                                             "
-echo "               |___/  |_|                                             "
-echo "                                           KEEP'EM SAFE!"
 for TOKEN in "$@"
 do
     TOKEN=${TOKEN^^}
-    echo "----- Generating $TOKEN wallet"
+    printf "%s Generating %s wallet\n" "-----" "$TOKEN"
     case $TOKEN in
         BTC) ./BTC/BTC.sh;;
         ETH) ./ETH/ETH.sh;;
         XMR) ./XMR/XMR.py;;
         IOTA)./IOTA/IOTA.py;;
-        *) echo "$TOKEN not yet implemented. You can ask for support of $TOKEN by opening an issue at https://github.com/lapwat/cryptowall/issues";
+        *) printf "%s not yet implemented. You can ask for support of %s by opening an issue at https://github.com/lapwat/cryptowall/issues\n" $TOKEN $TOKEN;
     esac
-    echo "----- Done"
+    printf "%s Done\n" "-----"
 done
