@@ -1,18 +1,17 @@
-# Cryptowall
 Cryptowall is an **offline** Docker container which generates random crypto wallets. It prints out the private key, public key, seed or any other usefull info to recover your wallet. It also gives the corresponding address to share in order to receive funds.
 
-Scripts can be found in the folder named after the token. Methods used are described below & sources are given. I tried to use bash scripts where I could to be the most transparent.
+Commented scripts can be found in the folder named after the token. Methods used are described below & sources are given.
+
+## Motivation
+
+I wanted a tool to easily generate random wallets on the fly for various cryptocurrency. My scripts needed to be easily understood the transparent, that is why I shared the sources and used bash + OpenSSL where possible. For those who want to use my tool, the scripts needed to be computed offline to prevent any leak.
 
 ## Usage
 
-```sh
-$ docker run --network=none lapwat/cryptowall [-p "passphrase"] token...
-```
-
-## Example
+Cryptowall currently supports Bitcoin, Ethereum and Iota tokens. Create an issue if you want a specific token to be implemented.
 
 ```sh
-$ docker run --network=none lapwat/cryptowall eth iota
+$ docker run --network=none lapwat/cryptowall btc eth iota
 ----- Generating BTC wallet                               
 Generating random key pair
 Private key    : dcd595b48df898a488aacf342c2c3e22ab0b61018a6753f84f607b161a192e52
@@ -37,16 +36,10 @@ First address: HWGUPOHCHLBCSNIBCENHREKGWQCRWGXQ9PRXHOP9DFPZABUMWYVIMPQRAHNMOBLKJ
 
 ### Bitcoin / Ethereum
 
-[This stackoverflow answer](https://stackoverflow.com/questions/48101258/how-to-convert-an-ecdsa-key-to-pem-format/49213805#49213805) inspired me to generate the public key associated to the private key (ECDSA). You have to import a binary stream _302e0201010420+private_key+a00706052b8104000a_ into openssl.
- 
 I used the method and script described in [this excellent article](https://kobl.one/blog/create-full-ethereum-keypair-and-address) from Vincent Kobel. He explaines how to generate an ECDSA keypair with OpenSSL and how to derive the public key into the corresponding address.
 
-I used [this method](https://en.bitcoin.it/wiki/Wallet_import_format) to convert the private key into Wallet Import Format. I used [this technique](https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses) to convert the public key into the corresponding bitcoin address.
+I used [this method](https://en.bitcoin.it/wiki/Wallet_import_format) to convert the private key into Wallet Import Format. I used [this technique](https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses) to convert the public key into the corresponding Bitcoin address.
 
 ### Iota
 
 I used the class _AddressGenerator_ from the official python library [pyota](https://github.com/iotaledger/iota.lib.py).
-
-### Ask for token support
-
-Creating an issue if you want a specific token to be implemeted.

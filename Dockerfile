@@ -2,19 +2,13 @@ FROM alpine:edge
 RUN apk add --update alpine-sdk linux-headers bash perl-dev libffi-dev openssl-dev python3-dev vim
 WORKDIR /build
 
-# Last build of OpenSSL for support of EDDSA curves
-RUN git clone https://github.com/openssl/openssl.git && \
-	cd openssl && \
-	./config no-async && \
-	make install
-
 # ETH
 RUN git clone https://github.com/maandree/libkeccak.git && \
-    cd libkeccak && \
-    make install
+	cd libkeccak && \
+	make install
 RUN git clone https://github.com/maandree/sha3sum.git && \
-    cd sha3sum && \
-    make keccak-256sum
+	cd sha3sum && \
+	make keccak-256sum
 
 # IOTA
 RUN pip3 install pyota base58
