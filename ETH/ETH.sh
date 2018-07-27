@@ -18,5 +18,5 @@ pub=$(printf "%s" "$keys" | grep pub -A 5 | tail -n +2 | tr -d '\n[:space:]:' | 
 addr=$(printf "%s" "$pub" | ./keccak-256sum -x -l | tr -d ' -' | tail -c 41)
 
 printf "Private key : %s\n" "$priv"
-printf "Public key  :  04%s\n" "$pub"
-printf "Address     :     0x%s\n" "$addr"
+printf "Public key  : 04%s\n" "$pub"
+printf "Address     : 0x%s\n" "$addr"
