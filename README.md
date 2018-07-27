@@ -1,10 +1,20 @@
-Cryptowall is an **offline** Docker container which generates random crypto wallets. It prints out the private key, public key, seed or any other usefull info to recover your wallet. It also gives the corresponding address to share in order to receive funds.
+_Cryptowall_ is an offline Docker container which generates random crypto wallets. It prints out the most useful informations: _private key_, _public key_ and _address_. With those informations, you will be able to receive funds and recover your wallet any time.
 
-Commented scripts can be found in the folder named after the token. Methods used are described below & sources are given. Scripts are written as short as possible to be fully understandable.
+It currently supports Bitcoin, Ethereum, Monero and Iota tokens.
+
+![Screenshot](screenshot.png)
 
 ## Motivation
 
-I wanted a tool to easily generate random wallets on the fly for various cryptocurrencies. My scripts needed to be easily understood the transparent, that is why I shared the sources and used bash + OpenSSL where possible. For those who want to use my tool, the scripts needed to be computed offline to prevent any leak.
+I want a tool to easily generate random wallets on the fly for various cryptocurrencies.
+
+Scripts need to be easily understood.
+- Scripts are written as short as possible.
+- Methods used are described below & sources are given.
+- Commented scripts can be found in the folder named after the token.
+
+Wallets need to be generated offline to prevent any leak.
+- A Docker container run with `--network=none` is the way to go.
 
 ## Usage
 
@@ -13,9 +23,6 @@ Cryptowall currently supports Bitcoin, Ethereum and Iota tokens. Create an issue
 ```sh
 $ docker run --network=none lapwat/cryptowall btc eth xmr iota
 ```
-
-![Screenshot](screenshot.png)
-
 ## Methods used
 
 ### Bitcoin / Ethereum
@@ -26,7 +33,7 @@ I used [this method](https://en.bitcoin.it/wiki/Wallet_import_format) to convert
 
 ### Monero
 
-I followed the official *Mnemonic (Electrum or Deterministic) Style* explained at the bottom of [this page](https://xmr.llcoins.net/addresstests.html)
+I followed the official _Mnemonic (Electrum or Deterministic) Style_ explained at the bottom of [this page](https://xmr.llcoins.net/addresstests.html).
 
 ### Iota
 
