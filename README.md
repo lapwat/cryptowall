@@ -4,7 +4,7 @@ Commented scripts can be found in the folder named after the token. Methods used
 
 ## Motivation
 
-I wanted a tool to easily generate random wallets on the fly for various cryptocurrency. My scripts needed to be easily understood the transparent, that is why I shared the sources and used bash + OpenSSL where possible. For those who want to use my tool, the scripts needed to be computed offline to prevent any leak.
+I wanted a tool to easily generate random wallets on the fly for various cryptocurrencies. My scripts needed to be easily understood the transparent, that is why I shared the sources and used bash + OpenSSL where possible. For those who want to use my tool, the scripts needed to be computed offline to prevent any leak.
 
 ## Usage
 
