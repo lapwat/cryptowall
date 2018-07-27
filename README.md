@@ -1,6 +1,6 @@
 Cryptowall is an **offline** Docker container which generates random crypto wallets. It prints out the private key, public key, seed or any other usefull info to recover your wallet. It also gives the corresponding address to share in order to receive funds.
 
-Commented scripts can be found in the folder named after the token. Methods used are described below & sources are given.
+Commented scripts can be found in the folder named after the token. Methods used are described below & sources are given. Scripts are written as short as possible to be fully understandable.
 
 ## Motivation
 
