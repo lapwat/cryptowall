@@ -2,7 +2,7 @@ FROM alpine:edge
 RUN apk add --update alpine-sdk linux-headers bash perl-dev libffi-dev openssl-dev python3-dev vim
 WORKDIR /build
 
-# ETH
+# ETH / XMR
 RUN git clone https://github.com/maandree/libkeccak.git && \
 	cd libkeccak && \
 	make install
