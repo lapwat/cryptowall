@@ -23,7 +23,7 @@ hash160=$(printf "%s" "$pub"| xxd -r -p | openssl dgst -sha256 -binary | openssl
 extended="00$hash160"
 address=$(printf "%s" "$extended" | xxd -r -p | base58 -c)
 
-printf "Private key    : %s\n" "$priv"
-printf "Public key     : %s\n" "$pub"
-printf "WIF            : %s\n" "$wif"
-printf "Address        : %s\n" "$address"
+printf "Private key : %s\n" "$priv"
+printf "Public key  : %s\n" "$pub"
+printf "WIF         : %s\n" "$wif"
+printf "Address     : %s\n" "$address"
